@@ -1,0 +1,14 @@
+<h1 [style.color]='green'>{{pData}}</h1>
+
+<input type="text" [(ngModel)]='data' (keyup)="sent()">
+<br>
+<br>
+
+
+<div *ngIf="data?.length >5"; else #elseBlock>
+
+    <h3>{{data}}</h3>
+
+</div>
+
+<br>
