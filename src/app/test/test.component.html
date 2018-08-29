@@ -5,10 +5,29 @@
 <br>
 
 
-<div *ngIf="data?.length >5"; else #elseBlock>
+<div *ngIf="data?.length >2; else elseBlock">
 
-    <h3>{{data}}</h3>
+    <div [ngSwitch]="data">
+        <div *ngSwitchCase="'red'">You have selected <label [style.color]='danger'>Red</label> color <span style="height: 30px; width: 40px; background-color:red; color: red">nbs</span></div>
+        <div *ngSwitchCase="'green'">You have selected <label [style.color]='green'>Green</label> color <span style="height: 30px; width: 40px; background-color:green; color: green">nbs</span></div>
+        <div *ngSwitchCase="'blue'">You have selected <label [style.color]="'blue'">Blue</label> color <span style="height: 30px; width: 40px; background-color:blue; color: blue">nbs</span></div>
+        <div *ngSwitchDefault>{{data}}</div>
+
+    </div>
 
 </div>
 
+    <ng-template #elseBlock>
+
+        <h3 [style.color]='danger'>Data length less than 2</h3>
+
+    </ng-template>
+
 <br>
+
+<div *ngFor="let item of array">
+
+
+    <h2> <label [style.color]='danger'>{{item}}</label>  <span [ngStyle]=styleArray [style.color]= "color=">nbs</span></h2>
+</div>
+

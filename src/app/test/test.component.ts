@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import {emit} from 'cluster';
+
 
 @Component({
   selector: 'app-test',
@@ -13,6 +13,13 @@ export class TestComponent implements OnInit {
   public data;
   @Output() public child = new EventEmitter();
   public status = true;
+  public danger = 'red';
+  public array = ['red', 'green', 'blue'];
+  public styleArray = {
+    height: '20px',
+    width: '40px',
+  }
+  public color = '';
   constructor() { }
 
   ngOnInit() {
